@@ -9,3 +9,9 @@ body{
 #news-alert{
     background-color: #FFFFFF;
 }
+.news-creator-img{
+    width: 35px;
+}
+.news-creator-p{
+    font-size: 12px;
+}
