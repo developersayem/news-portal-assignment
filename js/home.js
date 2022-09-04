@@ -24,8 +24,8 @@ const defaultNewsD = (allNews) => {
 
   const container = document.getElementById("cardContainer");
   container.innerHTML = "";
+
   for (const news of allNews) {
-    console.log(news);
     const newsDiv = document.createElement("div");
     newsDiv.innerHTML = `<div class="card mb-3">
                     <div class="row g-0">
@@ -42,7 +42,7 @@ const defaultNewsD = (allNews) => {
                                 <h5 class="card-title mt-2 mb-2">${
                                   news.title ? news.title : "No Data Available"
                                 }</h5>
-                                <p class="card-text text-muted">${
+                                <p class="card-text text-muted text-wrap">${
                                   news.details
                                     ? news.details
                                     : "No Data Available"
