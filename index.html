@@ -54,8 +54,8 @@
     </header>
     <main>
         <section class="container mt-4 mb-4 d-flex justify-content-center">
-            <div class="d-flex flex-wrap">
-                <a id="" class="btn activeBtn" href="./index.html">Home</a>
+            <div class="d-flex flex-wrap " id="btnContainer">
+                <a id="homeNew" class="btn activeBtn">Home</a>
                 <a id="breakingNews" class="btn">Breaking news</a>
                 <a id="regularNews" class="btn">Regular news</a>
                 <a id="internationalNews" class="btn">International news</a>
@@ -70,6 +70,12 @@
         <section class="container">
             <div class=" p-3 rounded mb-5" id="news-alert">
                 <p class="m-0 text-danger"><span id="newsCounter">0</span> items found!</p>
+            </div>
+        </section>
+        <!-- SPINER SSECTRION -->
+        <section class="container text-center p-5 d-none" id="spinnerContainer">
+            <div class="spinner-border text-dark" role="status">
+                <span class="visually-hidden">Loading...</span>
             </div>
         </section>
         <!-- all news section  -->

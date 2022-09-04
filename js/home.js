@@ -16,16 +16,17 @@ const defaultNews = (url) => {
     .then((res) => res.json())
     .then((data) => defaultNewsD(data.data))
     .catch((err) => defaultNewsD(err.message));
+  document.getElementById("spinnerContainer").classList.remove("d-none");
 };
 
 const defaultNewsD = (allNews) => {
   document.getElementById("newsCounter").innerText = allNews.length;
 
   const container = document.getElementById("cardContainer");
+  container.innerHTML = "";
   for (const news of allNews) {
     console.log(news);
     const newsDiv = document.createElement("div");
-    newsDiv.innerHTML = "";
     newsDiv.innerHTML = `<div class="card mb-3">
                     <div class="row g-0">
                         <div class="col-md-4">
@@ -167,9 +168,12 @@ const defaultNewsD = (allNews) => {
                     </div>
                 </div>`;
     container.appendChild(newsDiv);
+    // spiner end
+    document.getElementById("spinnerContainer").classList.add("d-none");
   }
 };
-// defaultNews(homeUrl);
+// All button events
+defaultNews(homeUrl);
 document.getElementById("breakingNews").addEventListener("click", function (e) {
   defaultNews(brekingNewsUrl);
 });
@@ -198,3 +202,16 @@ document.getElementById("artsNews").addEventListener("click", function (e) {
 document.getElementById("allNews").addEventListener("click", function (e) {
   defaultNews(allNewsUrl);
 });
+// active buttton functionality
+// Get the container element
+var btnContainer = document.getElementById("btnContainer");
+// Get all buttons with class="btn" inside the container
+var btns = btnContainer.getElementsByClassName("btn");
+// Loop through the buttons and add the active class to the current/clicked button
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function () {
+    var current = document.getElementsByClassName("activeBtn");
+    current[0].className = current[0].className.replace(" activeBtn", "");
+    this.className += " activeBtn";
+  });
+}
