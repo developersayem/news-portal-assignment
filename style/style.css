@@ -15,3 +15,7 @@ body{
 .news-creator-p{
     font-size: 12px;
 }
+.activeBtn{
+    color: #5D5FEF;
+    font-size: 17px;
+}
